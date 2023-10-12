@@ -13,6 +13,7 @@ COPY ./conf/default.conf /opt/docker/etc/nginx/vhost.conf
 COPY ./conf/dujiao.conf /opt/docker/etc/supervisor.d/
 COPY ./modify /dujiaoka/modify
 COPY start.sh /
+COPY start-hook.sh /dujiaoka/
 
 WORKDIR /dujiaoka
 
