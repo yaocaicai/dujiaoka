@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
 
 class UserController extends BaseController
