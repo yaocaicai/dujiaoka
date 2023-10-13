@@ -455,10 +455,10 @@ class StripeController extends PayController
         $client = new Client();
         $res = $client->get('https://api.dov.moe/exchange?src=cny&dst=gbp');
         $fxrate = json_decode($res->getBody(), true);
-        if ($fxrate['code'] != 1) {
+        if ($fxrate['success'] != 1) {
             $dfFxrate = 0.12;
         } else {
-            $dfFxrate = $fxrate['data']['value'] * 1.029;
+            $dfFxrate = $fxrate['data']['rate'] * 1.029;
         }
         return bcmul($cny , $dfFxrate, 2) + 0.2;
     }
