@@ -18,6 +18,7 @@ if [ -f "/dujiaoka/.env" ]; then
     php artisan clear-compiled
     php artisan optimize
     php artisan migrate
+    php artisan route:clear
 
     supervisord
 else
