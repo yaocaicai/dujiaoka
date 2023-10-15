@@ -40,12 +40,14 @@ class PaypalPayController extends PayController
             $paypal->setConfig(['mode' => 'live']);
             $product = $this->order->title;
             // 得到汇率
-            $total = Currency::convert()
-                ->from('CNY')
-                ->to('USD')
-                ->amount($this->order->actual_price)
-                ->round(2)
-                ->get();
+            // $total = Currency::convert()
+            //     ->from('CNY')
+            //     ->to('USD')
+            //     ->amount($this->order->actual_price)
+            //     ->round(2)
+            //     ->get();
+            // Currency 库已废弃，调用接口需要 api key，这里直接写死 0.14
+            $total = round($this->order->actual_price * 0.14, 2);
             $shipping = 0;
             $description = $this->order->title;
             $payer = new Payer();
