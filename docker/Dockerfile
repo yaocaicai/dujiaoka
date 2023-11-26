@@ -2,7 +2,7 @@ FROM ioiox/php-nginx:7.4-alpine
 LABEL maintainer="stille@ioiox.com"
 
 ENV INSTALL true
-ENV MODIFY false
+ENV MODIFY true
 ENV VERSION 2.0.6
 
 WORKDIR /
